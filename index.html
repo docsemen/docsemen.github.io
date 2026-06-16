@@ -168,7 +168,7 @@
       opacity: 0.9;
     }
 
-    /* Сетка услуг */
+    /* Сетка услуг — все карточки теперь кликабельны */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -187,12 +187,18 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
     .service-card:hover {
       background: rgba(30, 40, 52, 0.75);
       border-color: rgba(255, 215, 140, 0.15);
       transform: translateY(-3px);
       box-shadow: 0 14px 28px -8px rgba(0,0,0,0.5);
+    }
+    .service-card:active {
+      transform: scale(0.97);
     }
 
     .service-icon {
@@ -504,58 +510,58 @@
       <p>Комплексные консультации для жизни, бизнеса и путешествий. Деловой подход — ясные результаты.</p>
     </div>
 
-    <!-- 10 услуг -->
+    <!-- 10 услуг — каждая карточка теперь ссылка -->
     <div class="services-grid">
-      <div class="service-card">
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-fist-raised"></i></div>
         <h3>Самооборона <br/>тайский бокс</h3>
         <p>Техника Муай-Тай, защита в реальных условиях</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-spa"></i></div>
         <h3>Медитации</h3>
         <p>Осознанность, стрессоустойчивость, внутренний баланс</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
         <h3>Планирование <br/>путешествия</h3>
         <p>Маршруты, логистика, скрытые локации</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-hotel"></i></div>
         <h3>Умное бронирование</h3>
         <p>Отели, билеты, трансферы — лучшие условия</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-language"></i></div>
         <h3>Тайский язык</h3>
         <p>Разговорный курс, деловая и бытовая лексика</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-code-branch"></i></div>
         <h3>Основы продуктовой разработки</h3>
         <p>MVP, метрики, юнит-экономика, user flow</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-globe-asia"></i></div>
         <h3>Международные переводы</h3>
         <p>Юридические, финансовые и технические документы</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
         <h3>Подбор обучающих программ</h3>
         <p>Курсы, MBA, языковые школы, онлайн-платформы</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-medkit"></i></div>
         <h3>Правила выживания и первой помощи</h3>
         <p>Алгоритмы действий в экстремальных ситуациях</p>
-      </div>
-      <div class="service-card">
+      </a>
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="service-card">
         <div class="service-icon"><i class="fas fa-user-secret"></i></div>
         <h3>Конспирология</h3>
         <p>Критический анализ теорий, факт-чекинг, информационная гигиена</p>
-      </div>
+      </a>
     </div>
 
     <!-- Нижняя часть — ссылка на консультацию и ОБНОВЛЕННЫЕ КОНТАКТЫ -->
@@ -571,17 +577,19 @@
 
       <!-- КОНТАКТЫ: телефон, email, соцсети (как на целевой странице) -->
       <div class="meta-links">
-        <a href="mailto:biz@freechising.ru"><i class="fas fa-envelope"></i> biz@freechising.ru</a>
-        <span><i class="fas fa-clock"></i> Бангкок 11:00 – 18:00 (GMT+7)</span>
+        <a href="tel:+79993456789"><i class="fas fa-phone-alt"></i> +7 999 345-67-89</a>
+        <a href="mailto:consult@drsemen.school"><i class="fas fa-envelope"></i> consult@drsemen.school</a>
+        <span><i class="fas fa-clock"></i> 08:00 – 22:00 (GMT+7)</span>
       </div>
     </div>
 
     <!-- Доп. мета с ссылками на соцсети (в стиле целевой страницы) -->
     <div class="footer-meta">
       <span><i class="fas fa-shield-alt" style="margin-right: 4px;"></i> Конфиденциальность</span>
-      <a href="https://t.me/+79998664742" target="_blank"><i class="fab fa-telegram"></i> +79998664742</a>
-      <a href="https://www.youtube.com/@freelancerpotipako" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-      <a href="https://stepik.org/users/468787925" target="_blank"><i class="fas fa-graduation-cap"></i> Stepik</a>
+      <span><i class="fas fa-check-circle" style="color: #7d9b7d;"></i> 10+ направлений</span>
+      <a href="https://t.me/semen_fedoseev" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://www.youtube.com/@semen_fedoseev" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://stepik.org/users/123456789" target="_blank"><i class="fas fa-graduation-cap"></i> Stepik</a>
     </div>
   </div>
 </body>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Школа dr. Semen · Консалтинг</title>
+  <!-- Шрифты и иконки -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #0b0d10;
+      color: #eef2f5;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    /* Лендинг с фоном */
+    .landing {
+      max-width: 1300px;
+      width: 100%;
+      background: rgba(10, 14, 19, 0.78);
+      background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+      border-radius: 2.2rem;
+      padding: 2.5rem 2.5rem 2.8rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.2s;
+    }
+
+    /* ===== ЛОГОТИП (улучшенный) ===== */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding-bottom: 1.4rem;
+      gap: 0.8rem 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 215, 140, 0.08);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 215, 140, 0.15);
+      backdrop-filter: blur(4px);
+      font-size: 2rem;
+      color: #e2cfb0;
+      transition: 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-text .name {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .brand-text .name i {
+      color: #b8b0a0;
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+    .brand-text .sub {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #b6c8d9;
+      letter-spacing: 0.4px;
+      opacity: 0.85;
+      margin-top: 0.1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .brand-text .sub i {
+      color: #cec3b0;
+      font-size: 0.7rem;
+    }
+
+    /* Бейдж в шапке */
+    .cta-top {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #f0f5fa;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .cta-top i {
+      color: #cec3b0;
+    }
+    .cta-top:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #9aa9b9;
+      cursor: default;
+    }
+
+    /* Вступление */
+    .intro {
+      margin-bottom: 2.8rem;
+    }
+    .intro h2 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      max-width: 700px;
+      color: #f2f6fc;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .intro h2 span {
+      font-weight: 300;
+      color: #cbdae8;
+    }
+    .intro p {
+      font-size: 1.05rem;
+      max-width: 550px;
+      margin-top: 0.7rem;
+      color: #d3dfe9;
+      opacity: 0.9;
+    }
+
+    /* Сетка услуг */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin: 2.4rem 0 2rem;
+    }
+
+    .service-card {
+      background: rgba(18, 24, 32, 0.6);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 1.4rem;
+      padding: 1.3rem 1rem 1.2rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .service-card:hover {
+      background: rgba(30, 40, 52, 0.75);
+      border-color: rgba(255, 215, 140, 0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px -8px rgba(0,0,0,0.5);
+    }
+
+    .service-icon {
+      font-size: 1.7rem;
+      color: #d6c9b0;
+      margin-bottom: 0.5rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .service-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0.3rem 0 0.15rem;
+      color: #f0f4fa;
+      line-height: 1.3;
+    }
+    .service-card p {
+      font-size: 0.75rem;
+      color: #b4c6d8;
+      opacity: 0.8;
+      margin-top: 0.1rem;
+      line-height: 1.4;
+    }
+
+    /* Нижняя часть */
+    .footer-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2.4rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      gap: 1rem 1.5rem;
+    }
+
+    .consult-badge {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem 1.8rem 0.5rem 1.6rem;
+      border-radius: 80px;
+      border: 1px solid rgba(255, 215, 140, 0.12);
+      flex-wrap: wrap;
+    }
+    .consult-badge i {
+      font-size: 1.6rem;
+      color: #e2cfb0;
+    }
+    .consult-badge .label {
+      font-weight: 300;
+      color: #d0deec;
+      font-size: 0.9rem;
+    }
+    .consult-badge .strong {
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.2px;
+      font-size: 0.95rem;
+    }
+
+    .meta-links {
+      display: flex;
+      gap: 1.8rem;
+      color: #9aadc2;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .meta-links span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .meta-links i {
+      color: #b9a68b;
+      font-size: 0.95rem;
+      width: 18px;
+    }
+
+    /* декоративный низ */
+    .footer-meta {
+      margin-top: 1.4rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.4px;
+      color: #798b9e;
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.02);
+      padding-top: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+    @media (max-width: 900px) {
+      .landing {
+        padding: 1.8rem 1.5rem 2rem;
+        border-radius: 1.8rem;
+      }
+      .intro h2 {
+        font-size: 2.2rem;
+      }
+      .services-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .cta-top {
+        align-self: flex-start;
+        padding: 0.4rem 1.2rem;
+        font-size: 0.8rem;
+        white-space: normal;
+      }
+      .brand-text .name {
+        font-size: 1.7rem;
+      }
+      .logo-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.6rem;
+        border-radius: 14px;
+      }
+      .intro h2 {
+        font-size: 1.9rem;
+      }
+      .intro p {
+        font-size: 0.95rem;
+      }
+      .footer-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .consult-badge {
+        padding: 0.5rem 1.2rem;
+        gap: 0.8rem;
+        width: 100%;
+        justify-content: center;
+      }
+      .consult-badge i {
+        font-size: 1.4rem;
+      }
+      .meta-links {
+        gap: 0.8rem 1.2rem;
+        font-size: 0.8rem;
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0.5rem;
+      }
+      .landing {
+        padding: 1.2rem 0.9rem 1.5rem;
+        border-radius: 1.4rem;
+      }
+      .brand-text .name {
+        font-size: 1.4rem;
+      }
+      .brand-text .sub {
+        font-size: 0.7rem;
+      }
+      .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.3rem;
+        border-radius: 12px;
+      }
+      .intro h2 {
+        font-size: 1.6rem;
+      }
+      .intro p {
+        font-size: 0.9rem;
+      }
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+      }
+      .service-card {
+        padding: 0.9rem 0.7rem 0.8rem;
+        border-radius: 1rem;
+      }
+      .service-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+        border-radius: 10px;
+      }
+      .service-card h3 {
+        font-size: 0.85rem;
+      }
+      .service-card p {
+        font-size: 0.65rem;
+      }
+      .consult-badge {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0.4rem 0.8rem;
+        gap: 0.4rem 0.8rem;
+        border-radius: 40px;
+      }
+      .consult-badge .label {
+        font-size: 0.75rem;
+      }
+      .consult-badge .strong {
+        font-size: 0.8rem;
+      }
+      .meta-links {
+        font-size: 0.7rem;
+        gap: 0.4rem 0.8rem;
+      }
+      .footer-meta {
+        font-size: 0.6rem;
+        gap: 0.8rem;
+      }
+    }
+
+    /* мелкие штрихи */
+    .service-card:nth-child(1) .service-icon { color: #e6cba4; }
+    .service-card:nth-child(2) .service-icon { color: #b8d0d0; }
+    .service-card:nth-child(3) .service-icon { color: #d4be96; }
+    .service-card:nth-child(4) .service-icon { color: #b8c8b0; }
+    .service-card:nth-child(5) .service-icon { color: #c9b8a8; }
+    .service-card:nth-child(6) .service-icon { color: #aabac8; }
+    .service-card:nth-child(7) .service-icon { color: #d0bca8; }
+    .service-card:nth-child(8) .service-icon { color: #bdb0a0; }
+    .service-card:nth-child(9) .service-icon { color: #b8b8a8; }
+    .service-card:nth-child(10) .service-icon { color: #b0a8b8; }
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <!-- Шапка с улучшенным логотипом -->
+    <div class="header">
+      <div class="brand">
+        <div class="logo-icon">
+          <i class="fas fa-shield-halved"></i>
+        </div>
+        <div class="brand-text">
+          <div class="name">
+            dr. Semen
+            <i class="fas fa-circle-check" style="font-size: 0.9rem; color: #7d9b7d;"></i>
+          </div>
+          <div class="sub">
+            <i class="fas fa-compass"></i> Школа практических знаний
+          </div>
+        </div>
+      </div>
+      <div class="cta-top">
+        <i class="fas fa-calendar-check"></i> Консультация 24/7
+        <i class="fas fa-arrow-right" style="font-size: 0.7rem; opacity: 0.6; margin-left: 2px;"></i>
+      </div>
+    </div>
+
+    <!-- Вступление -->
+    <div class="intro">
+      <h2>Стратегия, <span>безопасность</span> и развитие</h2>
+      <p>Комплексные консультации для жизни, бизнеса и путешествий. Деловой подход — ясные результаты.</p>
+    </div>
+
+    <!-- 10 услуг -->
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-fist-raised"></i></div>
+        <h3>Самооборона <br/>тайский бокс</h3>
+        <p>Техника Муай-Тай, защита в реальных условиях</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-spa"></i></div>
+        <h3>Медитации</h3>
+        <p>Осознанность, стрессоустойчивость, внутренний баланс</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <h3>Планирование <br/>путешествия</h3>
+        <p>Маршруты, логистика, скрытые локации</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-hotel"></i></div>
+        <h3>Умное бронирование</h3>
+        <p>Отели, билеты, трансферы — лучшие условия</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-language"></i></div>
+        <h3>Тайский язык</h3>
+        <p>Разговорный курс, деловая и бытовая лексика</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-code-branch"></i></div>
+        <h3>Основы продуктовой разработки</h3>
+        <p>MVP, метрики, юнит-экономика, user flow</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-globe-asia"></i></div>
+        <h3>Международные переводы</h3>
+        <p>Юридические, финансовые и технические документы</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Подбор обучающих программ</h3>
+        <p>Курсы, MBA, языковые школы, онлайн-платформы</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-medkit"></i></div>
+        <h3>Правила выживания и первой помощи</h3>
+        <p>Алгоритмы действий в экстремальных ситуациях</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-user-secret"></i></div>
+        <h3>Конспирология</h3>
+        <p>Критический анализ теорий, факт-чекинг, информационная гигиена</p>
+      </div>
+    </div>
+
+    <!-- Нижняя часть -->
+    <div class="footer-section">
+      <div class="consult-badge">
+        <i class="fas fa-handshake"></i>
+        <div>
+          <div class="label">Первичная консультация</div>
+          <div class="strong"><i class="fas fa-circle" style="color: #a0c0a0; font-size: 0.5rem; margin-right: 6px;"></i> бесплатный разбор</div>
+        </div>
+        <i class="fas fa-chevron-right" style="color: #b9a68b; font-size: 0.8rem; margin-left: 2px;"></i>
+      </div>
+
+      <div class="meta-links">
+        <span><i class="fas fa-phone-alt"></i> +66 99 345 67 89</span>
+        <span><i class="fas fa-envelope"></i> consult@drsemen.school</span>
+        <span><i class="fas fa-clock"></i> 08:00 – 22:00 (GMT+7)</span>
+      </div>
+    </div>
+
+    <!-- Доп. мета -->
+    <div class="footer-meta">
+      <span><i class="fas fa-shield-alt" style="margin-right: 4px;"></i> Конфиденциальность</span>
+      <span><i class="fas fa-check-circle" style="color: #7d9b7d;"></i> 10+ направлений</span>
+      <span><i class="fas fa-user-tie"></i> Эксперты-практики</span>
+    </div>
+  </div>
+</body>
+</html>

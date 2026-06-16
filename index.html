@@ -28,7 +28,6 @@
       padding: 1rem;
     }
 
-    /* Лендинг с фоном */
     .landing {
       max-width: 1300px;
       width: 100%;
@@ -45,7 +44,7 @@
       transition: all 0.2s;
     }
 
-    /* ===== ЛОГОТИП (улучшенный) ===== */
+    /* ===== ЛОГОТИП ===== */
     .header {
       display: flex;
       flex-wrap: wrap;
@@ -118,7 +117,7 @@
       font-size: 0.7rem;
     }
 
-    /* Бейдж в шапке */
+    /* Бейдж в шапке — ссылка на консультацию */
     .cta-top {
       background: rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(8px);
@@ -133,6 +132,8 @@
       align-items: center;
       gap: 10px;
       white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
     }
     .cta-top i {
       color: #cec3b0;
@@ -140,7 +141,6 @@
     .cta-top:hover {
       background: rgba(255, 255, 255, 0.08);
       border-color: #9aa9b9;
-      cursor: default;
     }
 
     /* Вступление */
@@ -224,7 +224,7 @@
       line-height: 1.4;
     }
 
-    /* Нижняя часть */
+    /* Нижняя часть — консультация (ссылка) */
     .footer-section {
       display: flex;
       flex-wrap: wrap;
@@ -246,6 +246,14 @@
       border-radius: 80px;
       border: 1px solid rgba(255, 215, 140, 0.12);
       flex-wrap: wrap;
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .consult-badge:hover {
+      background: rgba(30, 40, 52, 0.5);
+      border-color: rgba(255, 215, 140, 0.25);
     }
     .consult-badge i {
       font-size: 1.6rem;
@@ -281,7 +289,6 @@
       width: 18px;
     }
 
-    /* декоративный низ */
     .footer-meta {
       margin-top: 1.4rem;
       font-size: 0.7rem;
@@ -428,7 +435,6 @@
       }
     }
 
-    /* мелкие штрихи */
     .service-card:nth-child(1) .service-icon { color: #e6cba4; }
     .service-card:nth-child(2) .service-icon { color: #b8d0d0; }
     .service-card:nth-child(3) .service-icon { color: #d4be96; }
@@ -443,7 +449,7 @@
 </head>
 <body>
   <div class="landing">
-    <!-- Шапка с улучшенным логотипом -->
+    <!-- Шапка с логотипом и ссылкой на консультацию -->
     <div class="header">
       <div class="brand">
         <div class="logo-icon">
@@ -459,10 +465,11 @@
           </div>
         </div>
       </div>
-      <div class="cta-top">
+      <!-- Ссылка на консультацию -->
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="cta-top">
         <i class="fas fa-calendar-check"></i> Консультация 24/7
         <i class="fas fa-arrow-right" style="font-size: 0.7rem; opacity: 0.6; margin-left: 2px;"></i>
-      </div>
+      </a>
     </div>
 
     <!-- Вступление -->
@@ -525,16 +532,16 @@
       </div>
     </div>
 
-    <!-- Нижняя часть -->
+    <!-- Нижняя часть — ссылка на консультацию -->
     <div class="footer-section">
-      <div class="consult-badge">
+      <a href="https://fedoseevsm.github.io/promo-freelance/" target="_blank" class="consult-badge">
         <i class="fas fa-handshake"></i>
         <div>
           <div class="label">Первичная консультация</div>
           <div class="strong"><i class="fas fa-circle" style="color: #a0c0a0; font-size: 0.5rem; margin-right: 6px;"></i> бесплатный разбор</div>
         </div>
         <i class="fas fa-chevron-right" style="color: #b9a68b; font-size: 0.8rem; margin-left: 2px;"></i>
-      </div>
+      </a>
 
       <div class="meta-links">
         <span><i class="fas fa-phone-alt"></i> +66 99 345 67 89</span>
